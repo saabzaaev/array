@@ -1,32 +1,72 @@
-// // Task-1
-// function longestword(sentence)
-// {
-//     let long = sentence.filter(sentence > 0)=>
-//     return long
-// }
-// console.log(longestword(["ehson rahmatulloh muhammad abdulloh"]));
+// Task-1
+function longestWord(sentence) {
+    let splittedSentence = sentence.split(" ");
+    let maxLength = 0;
+    let maxWord = "";
+
+    splittedSentence.forEach(word => {
+      if (word.length > maxLength) {
+        maxLength = word.length;
+        maxWord = word;
+      }
+    });
+
+    return maxWord;
+  }
+console.log(longestWord("ehson rahmatulloh muhammaddlakd abdulloh"));
 
 // Task-2
 function supermans(str)
 {
-    let res =  str.filter(names =>
+    return str.filter(element =>
         {
-            let nom = names.toLowerCase()
-            return nom.substr(nom.lingth - 3) === 'man'
+            let lower = element.toLowerCase()
+            if(lower.slice(-3) === 'man')
+            {
+                return element
+            }
         })
 }
-const arr1 = ["spider-man , batman , superman , hulk"]
-const result1 = supermans(arr1)
-console.log(result1);
+console.log(supermans(["spider-man" , "batman" , "superman" , "hulk" , "brusli"]));
+
+// Task-3
+function filters(arr)
+{
+    // let result = arr.forEach((element , index)=>
+    // {
+    //     if(index % 2 == 0 && element % 2 != 0)
+    //     {
+    //         return false
+    //     }
+    // })
+    let cnt = 0;
+    let result = arr.forEach((e , i)=>
+    {
+        if(i % 2 == 0 && e % 2 != 0 || i % 2 != 0 && e % 2 == 0)
+        {
+            cnt++
+        }
+    })
+    if(cnt==0) return "true"
+    else return "false"
+}
+console.log(filters([2, 7, 9, 1, 6, 1, 6, 3]));
 
 // Task-4
-function sumTwoSmallestNums(numbers)
+function sum(numbers)
 {
-    let positiveNumbers = numbers.filter(num => num > 0);
-    positiveNumbers.sort((a, b) => a - b);
-    return positiveNumbers[0] + positiveNumbers[1];
+    numbers.sort((a,b)=>a-b)
+    return numbers[0] + numbers [1]
 }
-const arr = [1 , 33 , 4 , 5, 65 , 7 , 10 , 10 , 17 , 0];
-const result = sumTwoSmallestNums(arr);
-console.log(result);  // Output: "sentence"
+console.log(sum([2,3,4,5,6,7,7,8,9,0,1]));
+
+// Task-5
+function seven(arr)
+{
+    return seven = arr.map(element =>
+        {
+            return element + '7'
+        });
+}
+console.log(seven(["hello" , "my" , "name" , "is" , "Ehson"]));
   
